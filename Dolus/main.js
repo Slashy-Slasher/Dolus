@@ -6,6 +6,7 @@ const isDev = process.env.NODE_ENV !== 'development';
 
 function createMainWindow(){
     const mainWindow = new BrowserWindow({
+        frame: false,
         title: "Dolus",
         width: 500,
         height: 900,
