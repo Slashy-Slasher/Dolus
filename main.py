@@ -8,13 +8,29 @@ from crypto.Random import get_random_bytes
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 
-
 CHUNK = 1024
 RATE = 44100
-LEN = 10
 
 # Encryption key
 encryption_key = os.urandom(16)
+
+def select_input(device):
+    devices = p.get_device_count()
+    input_device = None
+    for i in range(devices):
+        if p.get_device_info_by_index(i)["name"] == device:
+            input_device = i
+            break
+    return input_device
+
+def select_output(device):
+    devices = p.get_device_count()
+    output_device = None
+    for i in range(devices):
+        if p.get_device_info_by_index(i)["name"] == device:
+            output_device = i
+            break
+    return output_device
 
 def encrypt_data(data, encryption_key):
     backend = default_backend()
@@ -50,9 +66,9 @@ for i in range(p.get_device_count()):
     print(p.get_device_info_by_index(i))
 
 index1 = 1  # Selected Microphone
-index2 = 13 # VB Audio Cable "Input"
-index3 = 10  # Selected Speaker
-index4 = 6  # VB Audio Cable "Output"
+index2 = 5 # VB Audio Cable "Input"
+index3 = 6  # Selected Speaker
+index4 = 2 # VB Audio Cable "Output"
 
 print()
 print(p.get_device_info_by_index(index1))
@@ -65,24 +81,26 @@ print(p.get_device_info_by_index(index4))
 stream = p.open(
     format=pyaudio.paInt16, channels=1, rate=RATE, input=True, frames_per_buffer=CHUNK, input_device_index=index1
 )
-
+2
 player = p.open(
     format=pyaudio.paInt16, channels=1, rate=RATE, output=True, frames_per_buffer=CHUNK, output_device_index=index2
 )
 
-player2 = p2.open(
-    format=pyaudio.paInt16, channels=1, rate=RATE, output=True, frames_per_buffer=CHUNK, input_device_index=index3
-)
 stream2 = p2.open(
-    format=pyaudio.paInt16, channels=1, rate=RATE, input=True, frames_per_buffer=CHUNK, input_device_index=index4
+    format=pyaudio.paInt16, channels=2, rate=RATE, input=True, frames_per_buffer=CHUNK, input_device_index=index4
 )
+
+player2 = p2.open(
+    format=pyaudio.paInt16, channels=2, rate=RATE, output=True, frames_per_buffer=CHUNK, output_device_index=index3
+)
+
 
 # Main loop
 try:
     while True:
         # Read data from input streams
-        data = np.frombuffer(stream.read(CHUNK),  dtype=np.int16)
-        data2= np.frombuffer(stream2.read(CHUNK), dtype=np.int16)
+        data  = np.frombuffer(stream.read(CHUNK),  dtype=np.int16)
+        data2 = np.frombuffer(stream2.read(CHUNK), dtype=np.int16)
 
         print(f'Data 1: {data} Avg: {numpy.mean(data)}')
         print(f'Data 2: {data2} Avg: {numpy.mean(data2)}')
@@ -97,7 +115,6 @@ try:
         #decrypted_data = decrypt_data(data2.tobytes(), encryption_key)
         #player2.write(bytes(decrypted_data), CHUNK)
         player2.write(bytes(data2), CHUNK)
-
 
 
 except KeyboardInterrupt:

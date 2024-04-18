@@ -17,9 +17,9 @@ function createMainWindow() {
     },
   });
   mainWindow.loadFile(path.join(__dirname, "./index.html"));
-  if (isDev) {
-    mainWindow.webContents.openDevTools();
-  }
+  //if (isDev) {
+   // mainWindow.webContents.openDevTools();
+ // }
 }
 
 app.whenReady().then(() => {
