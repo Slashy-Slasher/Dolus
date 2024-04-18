@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dolus</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="render.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="header">
+        <h1>Dolus</h1>
+        <p>
+          Dolus is a desktop application that provides a way for users to
+          protect their privacy when using voice communication software.
+        </p>
+      </div>
+
+      <!-- Dropdown for selecting input -->
+      <select id="inputDropdown">
+        <!-- Dynamically populate options based on available microphones -->
+        <!-- Example: <option value="microphone1">Microphone 1</option> -->
+      </select>
+      <!-- Dropdown for selecting output -->
+      <select id="outputDropdown">
+        <!-- Dynamically populate options based on available speakers -->
+        <!-- Example: <option value="speaker1">Speaker 1</option> -->
+      </select>
+      <!-- Textbox for encryption key -->
+      <input
+        type="text"
+        id="encryptionKey"
+        placeholder="Enter Encryption Key"
+      />
+      <!-- Enable button here -->
+      <button class="btn" id="enableButton">Enable</button>
+    </div>
+  </body>
+</html>
