@@ -7,8 +7,6 @@ Live audio Encryption/Decryption utilizing physical and virtual microphones
 - [About](#about)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## About
 
@@ -18,8 +16,23 @@ Many companies actively collect and record information regarding online voice co
 
 ## Installation
 
-Instructions on how to install the project, including any dependencies.
+Installation: 
+  - Install Dolus
+
+Dependencies:
+  - Windows
+  - Installed VB Virtual Cable
+  - Working Microphone
+  - Working Speakers
 
 ## Usage
 
-Instructions on how to use the project, including examples.
+In Discord:
+  - Select VB Audio Inputs
+  - Run Dolus Audio Script
+
+## Current Issues
+
+Audio Feedback:
+  - Input audio is mirrored incorrectly; Creating a sidetone effect
+
