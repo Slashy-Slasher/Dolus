@@ -2,6 +2,30 @@ const inputDropdown = document.getElementById("inputDropdown");
 const outputDropdown = document.getElementById("outputDropdown");
 const enableBtn = document.getElementById("enableButton");
 
+const toggletheme = () => {
+  const root = document.documentElement;
+  const currentTheme = root.classList.contains('dark-theme') ? 'dark' : 'light';
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  if (newTheme === 'dark') {
+    root.style.setProperty('--backGround', '#141a21');
+    root.style.setProperty('--container', '#fff');
+    root.style.setProperty('--text', '#000');
+    root.style.setProperty('--containerOffset', '#c7d5e0');
+    root.classList.remove('light-theme')
+    root.classList.add('dark-theme')
+  } 
+  
+  else {
+    root.style.setProperty('--backGround', '#fff');
+    root.style.setProperty('--container', '#141a21');
+    root.style.setProperty('--text', '#fff');
+    root.style.setProperty('--containerOffset', '#171a21');
+    root.classList.remove('dark-theme')
+    root.classList.add('light-theme')
+  }
+};
+
 async function getAudioSources() {
   try {
     const devices = await navigator.mediaDevices.enumerateDevices();
