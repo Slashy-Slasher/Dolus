@@ -30,9 +30,3 @@ Dependencies:
 In Discord:
   - Select VB Audio Inputs
   - Run Dolus Audio Script
-
-## Current Issues
-
-Audio Feedback:
-  - Input audio is mirrored incorrectly; Creating a sidetone effect
-
