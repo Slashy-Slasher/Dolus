@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #171a21 ;
   margin: 0;
   padding: 0;
   display: flex;
@@ -21,12 +21,12 @@ body {
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #000000;
 }
 
 p {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #666;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #000000;
 }
 
 select {
@@ -34,9 +34,9 @@ select {
   width: 100%;
   padding: 10px;
   margin-top: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #c7d5e0;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: #c7d5e0;
   color: #333;
   font-size: 16px;
   cursor: pointer;
@@ -45,12 +45,12 @@ select {
 
 input[type="text"] {
   display: block;
-  width: 100%;
+  width: 96%;
   padding: 10px;
   margin-top: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #c7d5e0;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: #c7d5e0;
   color: #333;
   font-size: 16px;
   outline: none;
@@ -62,7 +62,7 @@ input[type="text"] {
   padding: 10px 20px;
   margin-top: 20px;
   text-align: center;
-  background-color: #007bff;
+  background-color: #171a21;
   color: #fff;
   border: none;
   border-radius: 5px;
