@@ -12,11 +12,12 @@ container Light: #141a21
 text/button Light: #fff
 button hover Light: #171a21
 */
+
 :root {
-  --backGround: #141a21;
-  --container: #fff;
-  --text: #000;
-  --containerOffset: #c7d5e0; 
+  --backGround: #fff;
+  --container: #141a21;
+  --text: #fff;
+  --containerOffset: #171a21; 
 }
 
 body {
@@ -75,6 +76,62 @@ input[type="text"] {
   color: var(--text);
   font-size: 16px;
   outline: none;
+}
+
+label {
+  width: 50px;
+  height: 20px;
+  position: relative;
+  display: block;
+  background: #d5cece;
+  border-radius: 200px; 
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+  cursor: pointer;
+}
+
+label:after {
+  content: "";
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #ffffff, #ff9900);
+  border-radius: 180px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + label {
+  background: #242424;
+}
+
+input:checked + label:after {
+  left: 37px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #cbcbcb, #292b74);
+}
+label:after {
+  transition: .5s;
+}
+
+label:active:after {
+  width: 25px;
+}
+
+input[type="darkModeToggle"] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+#header {
+  position: relative;
+}
+
+#darkModeToggleContainer {
+  position: absolute;
+  top: 10px;
+  right: 25px;
 }
 
 .btn {

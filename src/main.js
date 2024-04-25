@@ -5,16 +5,6 @@ const { app, BrowserWindow, desktopCapturer } = require("electron");
 const isMac = process.platform === "darwin";
 const isDev = process.env.NODE_ENV !== "development";
 
-//create a function that detects whether the user is in lightmode/darkmode
-function detectColorScheme() {
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    document.body.classList.toggle("dark-mode");
-  }
-  else {
-    document.body.classList.toggle("light-mode");
-}
-}
-
 function createMainWindow() {
   const mainWindow = new BrowserWindow({
     frame: false,
