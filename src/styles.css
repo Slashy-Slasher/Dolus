@@ -15,67 +15,100 @@ button hover Light: #171a21
 
 :root {
   --backGround: #fff;
-  --container: #141a21;
-  --text: #fff;
-  --containerOffset: #171a21; 
-}
+    --container: #141a21;
+    --text: #fff;
+    --containerOffset: #171a21; 
+  }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--backGround) ;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--backGround) ;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 
-.container {
-  width: 500px;
-  height: 500px;
-  background-color: var(--container);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  overflow: hidden;
-}
+  .container {
+    width: 500px;
+    height: 500px;
+    background-color: var(--container);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    overflow: hidden;
+  }
 
-h1 {
-  text-align: center;
-  color: var(--text);
-}
+  h1 {
+    text-align: center;
+    color: var(--text);
+  }
 
-p {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: var(--text);
-}
+  p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--text);
+  }
 
-select {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 20px;
-  border: 1px solid --backGround;
-  border-radius: 5px;
-  background-color: var(--containerOffset);
-  color: var(--text);
-  font-size: 16px;
+  select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid --backGround;
+    border-radius: 5px;
+    background-color: var(--containerOffset);
+    color: var(--text);
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  input[type="password"] {
+    display: block;
+    width: 96%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid var(--backGround);
+    border-radius: 5px;
+    background-color: var(--containerOffset);
+    color: var(--text);
+    font-size: 16px;
+    outline: none;
+  }
+
+  input[type="text"] {
+    display: block;
+    width: 96%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid var(--backGround);
+    border-radius: 5px;
+    background-color: var(--containerOffset);
+    color: var(--text);
+    font-size: 16px;
+    outline: none;
+  }
+
+  .password-toggle .toggle-password {
+    color: var(--text);
+  }
+
+
+
+.password-toggle {
+  position: relative;
+}
+.password-toggle input[type="password"] {
+  padding-right: 10px;
+}
+.password-toggle .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
   cursor: pointer;
-  outline: none;
-}
-
-input[type="text"] {
-  display: block;
-  width: 96%;
-  padding: 10px;
-  margin-top: 20px;
-  border: 1px solid var(--backGround);
-  border-radius: 5px;
-  background-color: var(--containerOffset);
-  color: var(--text);
-  font-size: 16px;
-  outline: none;
 }
 
 label {

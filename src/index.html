@@ -28,18 +28,15 @@
 
 
     <!-- Dropdown for selecting input -->
-    <select id="inputDropdown">
-        <!-- Dynamically populate options based on available microphones -->
-        <!-- Example: <option value="microphone1">Microphone 1</option> -->
-    </select>
+    <select id="inputDropdown"></select>
+
     <!-- Dropdown for selecting output -->
-    <select id="outputDropdown">
-        <!-- Dynamically populate options based on available speakers -->
-        <!-- Example: <option value="speaker1">Speaker 1</option> -->
-    </select>
-    <!-- Textbox for encryption key -->
-    <input type="text" id="encryptionKey" placeholder="Enter Encryption/Decryption Key"
-    />
+    <select id="outputDropdown"></select>
+
+    <div class="password-toggle">
+        <input type="password" id="encryptionKey" placeholder="Enter Encryption/Decryption Key">
+        <span class="toggle-password" onclick="togglePasswordVisibility()">(X)</span>
+    </div>
     <!-- Enable button here -->
     <button class="btn" id="enableButton">Enable</button>
 </div>

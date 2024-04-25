@@ -26,6 +26,19 @@ const toggletheme = () => {
   }
 };
 
+function togglePasswordVisibility() {
+  var passwordField = document.getElementById("encryptionKey");
+  var toggleButton = document.querySelector(".toggle-password");
+
+  if (passwordField.type === "password") {
+      passwordField.type = "text";
+      toggleButton.textContent = "(O)";
+  } else {
+      passwordField.type = "password";
+      toggleButton.textContent = "(X)";
+  }
+}
+
 async function getAudioSources() {
   try {
     const devices = await navigator.mediaDevices.enumerateDevices();
