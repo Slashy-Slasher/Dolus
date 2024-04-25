@@ -1,6 +1,7 @@
 const inputDropdown = document.getElementById("inputDropdown");
 const outputDropdown = document.getElementById("outputDropdown");
 const enableBtn = document.getElementById("enableButton");
+eOrD = false;
 
 const toggletheme = () => {
   const root = document.documentElement;
@@ -37,6 +38,50 @@ function togglePasswordVisibility() {
       passwordField.type = "password";
       toggleButton.textContent = "(X)";
   }
+}
+
+function enableOrDisable() {
+  const selectedInputDevice = inputDropdown.value;
+  const selectedOutputDevice = outputDropdown.value;
+  
+  //False - Denotes that the encryption/Decryption is not currently enabled
+  //True - Denotes that the encryption/Decryption is currently enabled 
+  
+  //if the encryption/decryption textbox is empty, set it to a random key
+  if (document.getElementById("encryptionKey").value === "") {
+    generateKey();
+  }
+  
+  if (eOrD === true) {
+    enableBtn.textContent = "Enable";
+    document.getElementById("GenerateKeyBtn").disabled = false;
+    document.getElementById("encryptionKey").disabled = false;
+
+    //reset the borders to the CSS --background color
+    document.getElementById("encryptionKey").style.borderColor = "var(--background)";
+    document.getElementById("GenerateKeyBtn").style.borderColor = "var(--background)";
+    eOrD = false;
+
+    //Kill the audio stream
+  }
+
+  //This is where the encryption/decryption will be enabled
+  else {
+    enableBtn.textContent = "Disable";
+    document.getElementById("GenerateKeyBtn").disabled = true;
+    document.getElementById("encryptionKey").disabled = true;
+
+    document.getElementById("encryptionKey").style.borderColor = "red";
+    document.getElementById("GenerateKeyBtn").style.borderColor = "red";
+    eOrD = true;
+
+    //Start the audio stream
+  }
+}
+
+function generateKey() {
+  var key = Math.random().toString(36).slice(-8);
+  document.getElementById("encryptionKey").value = key;
 }
 
 async function getAudioSources() {

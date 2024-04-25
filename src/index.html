@@ -37,8 +37,9 @@
         <input type="password" id="encryptionKey" placeholder="Enter Encryption/Decryption Key">
         <span class="toggle-password" onclick="togglePasswordVisibility()">(X)</span>
     </div>
-    <!-- Enable button here -->
-    <button class="btn" id="enableButton">Enable</button>
+
+    <button class="btn" onclick ="generateKey()" id="GenerateKeyBtn">Generate Random Key</button>
+    <button class="btn" onclick = "enableOrDisable()" id="enableButton">Enable</button>
 </div>
 </body>
 </html>
