@@ -15,9 +15,21 @@ Dolus is a desktop application that provides a way for users to protect their pr
 Many companies actively collect and record information regarding online voice communication through obscure privacy policies. This application is an effective means of providing live audio encryption and decryption using any voice communication software as a proxy. This helps users ensure their voice communications are always private.
 
 ## Installation
+  1.) Install Dolus
+  ```console
+  git clone https://github.com/Slashy-Slasher/Dolus.git
+  ```
 
-Installation: 
-  - Install Dolus
+  2.) Navigate to Dolus Repo
+  ```console
+  cd Dolus
+  ```
+
+  3.) Install and Run NPM
+  ```console
+  npm install
+  npm start
+  ```
 
 Dependencies:
   - Windows
