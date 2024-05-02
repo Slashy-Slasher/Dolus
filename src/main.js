@@ -1,6 +1,6 @@
 const path = require("path");
 
-const { app, BrowserWindow, desktopCapturer } = require("electron");
+const { app, BrowserWindow } = require("electron");
 
 const isMac = process.platform === "darwin";
 const isDev = process.env.NODE_ENV !== "development";
@@ -18,8 +18,8 @@ function createMainWindow() {
   });
   mainWindow.loadFile(path.join(__dirname, "./index.html"));
   //if (isDev) {
-   // mainWindow.webContents.openDevTools();
- // }
+  //  mainWindow.webContents.openDevTools();
+  //}
 }
 
 app.whenReady().then(() => {

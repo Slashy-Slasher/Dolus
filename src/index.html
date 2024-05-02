@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dolus</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="render.js"></script>
-    <style>
+    <style></style>
+  </head>
 
-    </style>
-</head>
-
-<body>
-<div class="container">
-    <div id="header">
-        <h1>Dolus
-            <div id="darkModeToggleContainer">
-                <input type="checkbox" id="darkModeToggle" onclick="toggletheme()" style="display: none; vertical-align: top;" />
-                <label for="darkModeToggle"></label>
-            </div>
+  <body>
+    <div class="container">
+      <div id="header">
+        <h1>
+          Dolus
+          <div id="darkModeToggleContainer">
+            <input
+              type="checkbox"
+              id="darkModeToggle"
+              onclick="toggletheme()"
+              style="display: none; vertical-align: top"
+            />
+            <label for="darkModeToggle"></label>
+          </div>
         </h1>
 
-        <p style="text-align: center;">
-            Create a virtual encrypted microphone and speaker from your existing devices.
+        <p style="text-align: center">
+          Create a virtual encrypted microphone and speaker from your existing
+          devices.
         </p>
+      </div>
+
+      <!-- Dropdown for selecting input -->
+      <select id="inputDropdown"></select>
+
+      <!-- Dropdown for selecting output -->
+      <select id="outputDropdown"></select>
+
+      <div class="password-toggle">
+        <input
+          type="password"
+          id="encryptionKey"
+          placeholder="Enter Encryption/Decryption Key"
+        />
+        <span class="toggle-password" onclick="togglePasswordVisibility()"
+          >(X)</span
+        >
+      </div>
+
+      <button class="btn" onclick="generateKey()" id="GenerateKeyBtn">
+        Generate Random Key
+      </button>
+      <button class="btn" onclick="enableOrDisable()" id="enableButton">
+        Enable
+      </button>
     </div>
-
-
-    <!-- Dropdown for selecting input -->
-    <select id="inputDropdown"></select>
-
-    <!-- Dropdown for selecting output -->
-    <select id="outputDropdown"></select>
-
-    <div class="password-toggle">
-        <input type="password" id="encryptionKey" placeholder="Enter Encryption/Decryption Key">
-        <span class="toggle-password" onclick="togglePasswordVisibility()">(X)</span>
-    </div>
-
-    <button class="btn" onclick ="generateKey()" id="GenerateKeyBtn">Generate Random Key</button>
-    <button class="btn" onclick = "enableOrDisable()" id="enableButton">Enable</button>
-</div>
-</body>
+  </body>
 </html>

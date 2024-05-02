@@ -10,6 +10,7 @@
   "author": "Dolus Development Group",
   "license": "UNLICENSED",
   "dependencies": {
+    "concurrently": "^8.2.2",
     "electron": "^29.2.0",
     "navigator": "^1.0.1",
     "python-shell": "^5.0.0",
