@@ -31,7 +31,7 @@ Many companies actively collect and record information regarding online voice co
   npm start
   ```
 
-Dependencies:
+## Dependencies:
   - Windows
   - Installed VB Virtual Cable
   - Working Microphone
