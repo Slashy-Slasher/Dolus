@@ -1,6 +1,6 @@
 # Dolus
 
-Live audio Encryption/Decryption utilizing physical and virtual microphones
+Live, seemless, and effective voice obfuscation/deobfuscation utilizing physical and virtual microphones
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@ Live audio Encryption/Decryption utilizing physical and virtual microphones
 
 Dolus is a desktop application that provides a way for users to protect their privacy when using voice communication software. 
 
-Many companies actively collect and record information regarding online voice communication through obscure privacy policies. This application is an effective means of providing live audio encryption and decryption using any voice communication software as a proxy. This helps users ensure their voice communications are always private.
+Many companies actively collect and record information regarding online voice communication through obscure privacy policies. This application is an effective means of providing live voice obfuscation using any voice communication software as a proxy. This helps users ensure their voice communications are always private.
 
 ## Installation
   1.) Install Dolus
