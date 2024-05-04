@@ -25,9 +25,9 @@ Many companies actively collect and record information regarding online voice co
   cd Dolus
   ```
 
-  3.) Install and Run NPM
+  3.) Install Electron and run the app via npm.
   ```console
-  npm install
+  npm install electron
   npm start
   ```
 
