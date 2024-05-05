@@ -2,7 +2,7 @@ const inputDropdown = document.getElementById("inputDropdown");
 const outputDropdown = document.getElementById("outputDropdown");
 const enableBtn = document.getElementById("enableButton");
 const keyValue = document.getElementById("encryptionKey");
-enabled = true;
+enabled = false;
 
 let dolusProcess = null;
 
@@ -18,6 +18,7 @@ function activateDolus() {
   });
 }
 
+// Function to flip the theme of the application
 const toggletheme = () => {
   const root = document.documentElement;
   const currentTheme = root.classList.contains("dark-theme") ? "dark" : "light";
@@ -40,63 +41,65 @@ const toggletheme = () => {
   }
 };
 
+// Function to toggle password visibility
 function togglePasswordVisibility() {
   var passwordField = document.getElementById("encryptionKey");
   var toggleButton = document.querySelector(".toggle-password");
 
   if (passwordField.type === "password") {
     passwordField.type = "text";
-    toggleButton.textContent = "(O)";
+    toggleButton.textContent = "Hide";
   } else {
     passwordField.type = "password";
-    toggleButton.textContent = "(X)";
+    toggleButton.textContent = "Show";
   }
 }
 
+// Function to enable or disable the audio modification
 function enableOrDisable() {
   const selectedInputDevice = inputDropdown.value;
   const selectedOutputDevice = outputDropdown.value;
 
-  // False - Denotes that the encryption/Decryption is not currently enabled
-  // True - Denotes that the encryption/Decryption is currently enabled
+  // False - Denotes that the audio modification is not currently enabled
+  // True - Denotes that the audio modification is currently enabled
 
-  // If the encryption/decryption textbox is empty, set it to a random key
+  // If the Chunk Size is not provided, then set it to 12000
   if (document.getElementById("encryptionKey").value === "") {
-    generateKey();
+    document.getElementById("encryptionKey").value = "12000";
   }
 
+  // 
   if (enabled === true) {
     enableBtn.textContent = "Enable";
-    document.getElementById("GenerateKeyBtn").disabled = false;
     document.getElementById("encryptionKey").disabled = false;
 
     // Reset the borders to the CSS --background color
     document.getElementById("encryptionKey").style.borderColor =
       "var(--background)";
-    document.getElementById("GenerateKeyBtn").style.borderColor =
-      "var(--background)";
     enabled = false;
+
     if (dolusProcess) {
       dolusProcess.kill();
       dolusProcess = null;
     }
+
   } else {
     enableBtn.textContent = "Disable";
-    document.getElementById("GenerateKeyBtn").disabled = true;
     document.getElementById("encryptionKey").disabled = true;
 
     document.getElementById("encryptionKey").style.borderColor = "red";
-    document.getElementById("GenerateKeyBtn").style.borderColor = "red";
     enabled = true;
     activateDolus();
   }
 }
 
+// TBI - Function to generate a random key
 function generateKey() {
   var key = Math.random().toString(36).slice(-8);
   document.getElementById("encryptionKey").value = key;
 }
 
+// Function to get the audio sources
 async function getAudioSources() {
   try {
     const devices = await navigator.mediaDevices.enumerateDevices();

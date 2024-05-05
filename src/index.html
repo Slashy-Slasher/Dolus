@@ -41,16 +41,18 @@
         <input
           type="password"
           id="encryptionKey"
-          placeholder="Enter Encryption/Decryption Key"
+          placeholder="Obfuscation Chunk Size"
         />
         <span class="toggle-password" onclick="togglePasswordVisibility()"
-          >(X)</span
+          >Show</span
         >
       </div>
 
-      <button class="btn" onclick="generateKey()" id="GenerateKeyBtn">
+      <!-- commented out until encryption feature is finalized -->
+      <!-- <button class="btn" onclick="generateKey()" id="GenerateKeyBtn">
         Generate Random Key
-      </button>
+            </button> -->
+      
       <button class="btn" onclick="enableOrDisable()" id="enableButton">
         Enable
       </button>
